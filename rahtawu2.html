@@ -1,0 +1,823 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>RAHTAWU TANGGUH | Desa Tangguh Bencana</title>
+
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<link rel="stylesheet" href="https://ppkormawa.kemdiktisaintek.go.id/front/css/bootstrap.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+<style>
+
+/* ========================= */
+/* WARNA UTAMA */
+/* ========================= */
+
+:root{
+--utama:#1abc9c;
+--hover:#16a085;
+--bg:#e8f8f5;
+--footer:#0f4c4a;
+}
+
+/* ========================= */
+/* HEADER */
+/* ========================= */
+
+.main-header{
+position:fixed;
+top:0;
+width:100%;
+background:var(--utama);
+z-index:999;
+padding:15px 0;
+box-shadow:0 2px 10px rgba(0,0,0,0.1);
+}
+
+.banner-section{
+margin-top:160px;
+}
+
+/* ========================= */
+/* LOGO */
+/* ========================= */
+
+.logo-area{
+display:flex;
+justify-content:center;
+gap:20px;
+align-items:center;
+margin-bottom:10px;
+}
+
+.logo-bg{
+background:white;
+padding:10px 25px;
+border-radius:15px;
+display:flex;
+gap:25px;
+align-items:center;
+}
+
+.logo-bg img{
+height:70px;
+}
+
+.judul-web{
+text-align:center;
+color:white;
+font-weight:800;
+letter-spacing:2px;
+}
+
+/* ========================= */
+/* MENU */
+/* ========================= */
+
+.navigation{
+display:flex;
+justify-content:center;
+align-items:center;
+gap:12px;
+margin-top:15px;
+flex-wrap:nowrap;   /* supaya tetap satu baris */
+padding:0;
+}
+
+.navigation li{
+list-style:none;
+}
+
+.navigation li a{
+color:white;
+font-weight:600;
+text-decoration:none;
+padding:10px 16px;
+border-radius:20px;
+transition:0.3s;
+display:block;
+}
+
+/* saat mouse diarahkan */
+
+.navigation li a:hover{
+background:#16a085;
+}
+
+/* menu aktif */
+
+.navigation li.active a{
+background:#0f8f79;   /* warna lebih gelap */
+}
+
+/* ========================= */
+/* SECTION */
+/* ========================= */
+
+.about-section{
+background:var(--bg);
+padding:80px 0;
+}
+
+/* ========================= */
+/* PERBAIKI POSISI SCROLL */
+/* ========================= */
+
+section{
+scroll-margin-top:170px;
+}
+
+.features-section{
+padding:80px 0;
+}
+
+.sec-title{
+text-align:center;
+margin-bottom:40px;
+}
+
+.sec-title h2{
+color:#0f4c4a;
+}
+
+/* ========================= */
+/* BUTTON */
+/* ========================= */
+
+.theme-btn{
+background:var(--utama);
+color:white;
+border:none;
+padding:10px 25px;
+border-radius:25px;
+}
+
+.theme-btn:hover{
+background:var(--hover);
+}
+
+/* ========================= */
+/* FOOTER */
+/* ========================= */
+
+footer{
+background:var(--footer);
+color:white;
+padding:50px 0;
+text-align:center;
+}
+
+/* ========================= */
+/* FORM */
+/* ========================= */
+
+.form-control{
+border-radius:10px;
+margin-bottom:10px;
+}
+
+/* ========================= */
+/* IMAGE CARD */
+/* ========================= */
+
+.card-img{
+width:100%;
+border-radius:10px;
+margin-bottom:10px;
+}
+
+/* ========================= */
+/* LOADING SCREEN */
+/* ========================= */
+
+#loader{
+position:fixed;
+width:100%;
+height:100%;
+background:white;
+z-index:9999;
+display:flex;
+align-items:center;
+justify-content:center;
+}
+
+.loader-circle{
+width:60px;
+height:60px;
+border:6px solid #1abc9c;
+border-top:6px solid transparent;
+border-radius:50%;
+animation:spin 1s linear infinite;
+}
+
+@keyframes spin{
+0%{transform:rotate(0deg);}
+100%{transform:rotate(360deg);}
+}
+
+/* ========================= */
+/* ICON KONTAK */
+/* ========================= */
+
+.kontak-item{
+margin:8px 0;
+font-size:16px;
+}
+
+.kontak-item i{
+color:#1abc9c;
+margin-right:10px;
+width:20px;
+}
+
+/* ========================= */
+/* MENU ACTIVE HIGHLIGHT */
+/* ========================= */
+
+.navigation li.active a{
+background:#16a085;
+}
+
+/* ========================= */
+/* SMOOTH SCROLL */
+/* ========================= */
+
+html{
+scroll-behavior:smooth;
+}
+
+/* ========================= */
+/* KONTAK RATA KIRI */
+/* ========================= */
+
+.kontak-box{
+max-width:420px;
+margin:20px auto;
+text-align:left;
+}
+
+.kontak-item{
+display:flex;
+align-items:center;
+margin:10px 0;
+font-size:16px;
+}
+
+.kontak-item i{
+color:#1abc9c;
+margin-right:12px;
+width:25px;
+font-size:18px;
+}
+
+/* ========================= */
+/* KONTAK GRID */
+/* ========================= */
+
+.kontak-grid{
+max-width:600px;
+margin:20px auto;
+display:grid;
+grid-template-columns:1fr 1fr;
+gap:10px 40px;
+}
+
+.kontak-item{
+display:flex;
+align-items:center;
+font-size:16px;
+}
+
+.kontak-item i{
+color:#1abc9c;
+margin-right:10px;
+width:22px;
+}
+
+/* ========================= */
+/* MOBILE VERSION */
+/* ========================= */
+
+@media (max-width:768px){
+
+/* HEADER */
+
+.main-header{
+padding:10px 0;
+}
+
+.banner-section{
+margin-top:190px;
+}
+
+/* LOGO */
+
+.logo-bg{
+padding:8px 15px;
+gap:15px;
+}
+
+@media (max-width:768px){
+
+.logo-bg img{
+height:28px;
+}
+
+.judul-web{
+font-size:14px;
+}
+
+.navigation li a{
+font-size:11px;
+padding:5px 7px;
+}
+
+.banner-section{
+margin-top:105px;
+}
+
+.banner-section img{
+height:180px;
+}
+
+}
+
+/* MENU MOBILE (SCROLL HORIZONTAL) */
+
+.navigation{
+display:flex;
+justify-content:center;
+align-items:center;
+flex-wrap:wrap;
+gap:6px;
+margin-top:10px;
+padding:0;
+}
+
+.navigation li a{
+padding:8px 14px;
+font-size:14px;
+white-space:nowrap;
+}
+
+/* SECTION */
+
+.about-section{
+padding:50px 15px;
+}
+
+.features-section{
+padding:50px 15px;
+}
+
+/* GRID JADI 1 KOLOM */
+
+.row{
+display:block;
+}
+
+.col-md-6,
+.col-md-4{
+width:100%;
+margin-bottom:25px;
+}
+
+/* VIDEO */
+
+iframe{
+height:200px;
+}
+
+/* MAP */
+
+#peta iframe{
+height:300px;
+}
+
+/* FORM */
+
+.form-control{
+font-size:14px;
+}
+
+/* BUTTON */
+
+.theme-btn{
+width:100%;
+margin-top:10px;
+}
+
+/* KONTAK */
+
+.kontak-grid{
+grid-template-columns:1fr;
+gap:10px;
+max-width:300px;
+}
+
+.kontak-item{
+font-size:14px;
+}
+
+footer{
+padding:35px 15px;
+}
+
+}
+
+</style>
+
+</head>
+
+<body>
+<!-- LOADER -->
+
+<div id="loader">
+<div class="loader-circle"></div>
+</div>
+
+<!-- HEADER -->
+
+<header class="main-header">
+
+<div class="container">
+
+<div class="logo-area">
+
+<div class="logo-bg">
+<img src="kudus.jpg">
+<img src="ppko.png">
+</div>
+
+</div>
+
+<h2 class="judul-web">RAHTAWU TANGGUH</h2>
+
+<ul class="navigation">
+
+<li><a href="#">Beranda</a></li>
+<li><a href="#tentang">Tentang Desa</a></li>
+<li><a href="#bencana">Potensi Bencana</a></li>
+<li><a href="#edukasi">Edukasi</a></li>
+<li><a href="#kegiatan">Kegiatan</a></li>
+<li><a href="#peta">Peta</a></li>
+<li><a href="#laporan">Laporan</a></li>
+<li><a href="#panduan">Buku Panduan</a></li>
+<li><a href="#kontak">Kontak</a></li>
+
+</ul>
+
+</div>
+
+</header>
+
+<!-- BANNER -->
+
+<section class="banner-section">
+
+<img src="https://picsum.photos/1600/600" style="width:100%">
+
+</section>
+
+<!-- TENTANG -->
+
+<section class="about-section" id="tentang">
+
+<div class="container">
+
+<div class="sec-title">
+<h2>Tentang Desa Rahtawu</h2>
+</div>
+
+<div class="row">
+
+<div class="col-12 col-md-6">
+
+<p>
+
+Desa Rahtawu terletak di Kecamatan Gebog Kabupaten Kudus yang berada di daerah pegunungan.  
+Desa ini memiliki potensi wisata alam yang indah namun juga memiliki potensi bencana seperti banjir bandang dan tanah longsor.
+
+Website ini dibuat sebagai media edukasi untuk meningkatkan kesiapsiagaan masyarakat terhadap bencana.
+
+</p>
+
+</div>
+
+<div class="col-12 col-md-6">
+
+<img src="https://picsum.photos/600/400" width="100%">
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+<!-- POTENSI BENCANA -->
+
+<section class="features-section" id="bencana">
+
+<div class="container">
+
+<div class="sec-title">
+<h2>Potensi Bencana</h2>
+</div>
+
+<div class="row">
+
+<div class="col-12 col-md-4">
+
+<h4>Banjir Bandang</h4>
+
+<p>Banjir bandang dapat terjadi akibat curah hujan tinggi di daerah pegunungan.</p>
+
+</div>
+
+<div class="col-12 col-md-4">
+
+<h4>Tanah Longsor</h4>
+
+<p>Tanah longsor terjadi di daerah lereng dengan kondisi tanah yang labil.</p>
+
+</div>
+
+<div class="col-md-4">
+
+<h4>Mitigasi</h4>
+
+<p>Mitigasi dilakukan melalui edukasi dan simulasi evakuasi.</p>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+<!-- EDUKASI -->
+
+<section class="about-section" id="edukasi">
+
+<div class="container">
+
+<div class="sec-title">
+<h2>Edukasi Kebencanaan</h2>
+</div>
+
+<div class="row">
+
+<div class="col-12 col-md-6">
+
+<p>
+
+Video edukasi mengenai cara menghadapi bencana banjir dan tanah longsor serta langkah evakuasi yang benar.
+
+</p>
+
+</div>
+
+<div class="col-12 col-md-6">
+
+<iframe width="100%" height="250" src="https://www.youtube.com/embed/b5wjvTA4ao4"></iframe>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+<!-- KEGIATAN -->
+
+<section class="features-section" id="kegiatan">
+
+<div class="container">
+
+<div class="sec-title">
+<h2>Kegiatan Desa Tangguh Bencana</h2>
+</div>
+
+<div class="row">
+
+<div class="col-12 col-md-4">
+
+<img src="https://picsum.photos/400/250" class="card-img">
+
+<h4>Sosialisasi</h4>
+
+<p>Penyuluhan kepada masyarakat tentang kesiapsiagaan bencana.</p>
+
+</div>
+
+<div class="col-12 col-md-4">
+
+<img src="https://picsum.photos/401/250" class="card-img">
+
+<h4>Simulasi Evakuasi</h4>
+
+<p>Latihan evakuasi menuju titik aman.</p>
+
+</div>
+
+<div class="col-12 col-md-4">
+
+<img src="https://picsum.photos/402/250" class="card-img">
+
+<h4>Penanaman Pohon</h4>
+
+<p>Menjaga kestabilan tanah agar tidak longsor.</p>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+<!-- PETA -->
+
+<section class="about-section" id="peta">
+
+<div class="container">
+
+<div class="sec-title">
+<h2>Peta Evakuasi</h2>
+</div>
+
+<iframe
+src="https://www.google.com/maps?q=desa+rahtawu+kudus&output=embed"
+width="100%"
+height="400"
+style="border:0">
+</iframe>
+
+</div>
+
+</section>
+
+<!-- FORM LAPORAN -->
+
+<section class="features-section" id="laporan">
+
+<div class="container">
+
+<div class="sec-title">
+<h2>Kirim Laporan Bencana</h2>
+</div>
+
+<form>
+
+<input type="text" class="form-control" placeholder="Nama">
+
+<input type="text" class="form-control" placeholder="No HP">
+
+<input type="text" class="form-control" placeholder="Lokasi Kejadian">
+
+<select class="form-control">
+<option>Jenis Bencana</option>
+<option>Banjir</option>
+<option>Longsor</option>
+<option>Pohon Tumbang</option>
+</select>
+
+<textarea class="form-control" rows="4" placeholder="Deskripsi"></textarea>
+
+<button class="theme-btn">Kirim Laporan</button>
+
+</form>
+
+</div>
+
+</section>
+
+<section class="about-section" id="panduan">
+
+<div class="container">
+
+<div class="sec-title">
+<h2>Buku Panduan Mitigasi Bencana</h2>
+</div>
+
+<div class="row">
+
+<div class="col-md-6">
+
+<p>
+
+Buku panduan ini berisi informasi mengenai langkah-langkah yang harus dilakukan masyarakat saat terjadi bencana seperti banjir, tanah longsor, dan gempa bumi.
+
+Masyarakat diharapkan memahami jalur evakuasi dan prosedur penyelamatan diri.
+
+</p>
+
+<a href="#" class="theme-btn">Download Buku Panduan</a>
+
+</div>
+
+<div class="col-md-6">
+
+<img src="https://picsum.photos/500/350">
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+<!-- FOOTER -->
+
+<footer id="kontak">
+
+<h3>Kontak Desa Rahtawu</h3>
+
+<div class="kontak-grid">
+
+<div class="kontak-item">
+<i class="fa-solid fa-phone"></i>
+<span>0812-3456-7890</span>
+</div>
+
+<div class="kontak-item">
+<i class="fa-solid fa-envelope"></i>
+<span>desarahtawu@gmail.com</span>
+</div>
+
+<div class="kontak-item">
+<i class="fa-brands fa-instagram"></i>
+<span>@desarahtawu</span>
+</div>
+
+<div class="kontak-item">
+<i class="fa-brands fa-facebook"></i>
+<span>Desa Rahtawu</span>
+</div>
+
+<div class="kontak-item">
+<i class="fa-brands fa-youtube"></i>
+<span>Desa Rahtawu Official</span>
+</div>
+
+</div>
+
+<hr>
+<p>Desa Rahtawu | Kecamatan Gebog | Kabupaten Kudus</p>
+<p>© 2026 Desa Tangguh Bencana Rahtawu</p>
+
+</div>
+
+</footer>
+
+<script>
+
+/* ========================= */
+/* LOADING SCREEN */
+/* ========================= */
+
+window.addEventListener("load",function(){
+document.getElementById("loader").style.display="none";
+});
+
+
+/* ========================= */
+/* MENU ACTIVE */
+/* ========================= */
+
+const sections=document.querySelectorAll("section");
+const navLinks=document.querySelectorAll(".navigation li");
+
+window.addEventListener("scroll",()=>{
+
+let current="";
+
+sections.forEach(section=>{
+const sectionTop=section.offsetTop-200;
+
+if(pageYOffset>=sectionTop){
+current=section.getAttribute("id");
+}
+});
+
+navLinks.forEach(li=>{
+li.classList.remove("active");
+
+if(li.querySelector("a").getAttribute("href")=="#"+current){
+li.classList.add("active");
+}
+
+});
+
+});
+
+</script>
+</body>
+</html>

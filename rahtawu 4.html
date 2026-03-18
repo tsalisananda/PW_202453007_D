@@ -1,0 +1,600 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="utf-8">
+<title>RAHTAWU TANGGUH | Desa Tangguh Bencana</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<link rel="stylesheet" href="https://ppkormawa.kemdiktisaintek.go.id/front/css/bootstrap.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+<style>
+:root{
+--utama:#1abc9c;
+--hover:#16a085;
+--bg:#e8f8f5;
+--footer:#0f4c4a;
+--header-h:140px; /* desktop */
+}
+
+*{box-sizing:border-box}
+
+body{
+margin:0;
+font-family:Arial, Helvetica, sans-serif;
+padding-top:var(--header-h); /* FIX: ganti margin-top banner */
+}
+
+.container{
+max-width:1200px;
+margin:auto;
+padding:0 20px;
+}
+
+img{
+max-width:100%;
+border-radius:10px;
+}
+
+/* HEADER (tetap sama gaya) */
+.main-header{
+position:fixed;
+top:0;
+width:100%;
+background:var(--utama);
+z-index:999;
+padding:10px 0;
+}
+
+.logo-area{
+display:flex;
+justify-content:center;
+}
+
+.logo-bg{
+background:white;
+padding:6px 15px;
+border-radius:10px;
+display:flex;
+gap:15px;
+}
+
+.logo-bg img{
+height:45px;
+}
+
+.judul-web{
+text-align:center;
+color:white;
+font-weight:bold;
+margin-top:5px;
+font-size:24px;
+}
+
+.navigation{
+display:flex;
+justify-content:center;
+gap:10px;
+margin-top:10px;
+flex-wrap:wrap;
+}
+
+.navigation a{
+color:white;
+text-decoration:none;
+padding:6px 12px;
+border-radius:20px;
+font-size:13px;
+}
+
+.navigation a:hover{
+background:var(--hover);
+}
+
+/* ========================= */
+/* BANNER (tetap desain asli) */
+/* ========================= */
+.banner{
+padding:0 !important;
+position:relative;
+width:100%;
+overflow:hidden;
+line-height:0;
+}
+
+.banner img{
+width:100%;
+height:70vh;
+object-fit:cover;
+object-position:center;
+display:block;
+border-radius:0;
+}
+
+.banner::after{
+content:"";
+position:absolute;
+top:0;
+left:0;
+width:100%;
+height:100%;
+background:rgba(0,0,0,0.5);
+}
+
+.banner-text{
+position:absolute;
+top:50%;
+left:50%;
+transform:translate(-50%,-50%);
+color:white;
+text-align:center;
+width:90%;
+animation:fadeUp 1s ease;
+z-index:2;
+}
+
+@keyframes fadeUp{
+from{opacity:0;top:60%;}
+to{opacity:1;top:50%;}
+}
+
+.banner-text h2{
+font-size:32px;
+font-weight:bold;
+margin-bottom:10px;
+text-shadow:2px 2px 8px rgba(0,0,0,0.7);
+}
+
+.banner-text p{
+max-width:700px;
+margin:auto;
+font-size:15px;
+line-height:1.6;
+letter-spacing:0.3px;
+}
+
+/* SECTION */
+section{
+padding:60px 0;
+scroll-margin-top:var(--header-h);
+}
+
+.sec-title{
+text-align:center;
+margin-bottom:30px;
+}
+
+/* CARD (tetap gaya, tambah jarak) */
+.row{
+row-gap:25px;
+}
+
+.card-img{
+height:200px;
+object-fit:cover;
+margin-bottom:25px;
+}
+
+.card-panduan{
+background:white;
+padding:20px;
+border-radius:12px;
+box-shadow:0 5px 15px rgba(0,0,0,0.1);
+transition:0.3s;
+height:100%;
+}
+
+.card-panduan:hover{
+transform:translateY(-5px);
+}
+
+.card-panduan h4{
+margin-bottom:20px;
+}
+
+.card-panduan ul{
+padding-left:18px;
+font-size:14px;
+line-height:1.6;
+}
+
+.btn-panduan{
+display:inline-block;
+margin-top:20px;
+padding:8px 15px;
+background:var(--utama);
+color:white;
+text-decoration:none;
+border-radius:20px;
+font-size:13px;
+}
+
+.btn-panduan:hover{
+background:var(--hover);
+}
+
+/* FOOTER */
+footer{
+background:var(--footer);
+color:white;
+text-align:center;
+padding:40px 0;
+}
+
+/* MOBILE (satu saja, tidak dobel) */
+@media(max-width:768px){
+:root{--header-h:170px;} /* header lebih tinggi di HP */
+
+.logo-bg img{height:35px;}
+.judul-web{font-size:18px;}
+
+.banner img{height:220px;}
+
+.banner-text h2{font-size:20px;}
+.banner-text p{font-size:13px;}
+
+.container{padding:0 15px;}
+}
+</style>
+</head>
+
+<body>
+
+<!-- HEADER -->
+<header class="main-header">
+<div class="container">
+
+<div class="logo-area">
+<div class="logo-bg">
+<img src="kudus.jpg">
+<img src="ppko.png">
+</div>
+</div>
+
+<h2 class="judul-web">RAHTAWU TANGGUH</h2>
+
+<div class="navigation">
+<a href="#">Beranda</a>
+<a href="#berita">Berita</a>
+<a href="#edukasi">Edukasi</a>
+<a href="#dokumentasi">Dokumentasi</a>
+<a href="#kontak">Kontak</a>
+</div>
+
+</div>
+</header>
+
+<!-- BANNER -->
+<section class="banner">
+<img src="rahtawu.jpg">
+<div class="banner-text">
+<h2>Selamat Datang di Desa Tangguh Bencana Rahtawu</h2>
+<p>
+Website ini merupakan media informasi, edukasi, dan dokumentasi kegiatan Desa Rahtawu 
+dalam menghadapi potensi bencana seperti banjir dan tanah longsor. 
+Mari bersama membangun masyarakat yang tangguh, siap, dan siaga menghadapi bencana.
+</p>
+</div>
+</section>
+
+<!-- TENTANG DESA -->
+<section id="tentang" style="background:#f5f5f5">
+<div class="container">
+
+<div class="sec-title">
+<h2>Tentang Desa Rahtawu</h2>
+</div>
+
+<div class="row">
+
+<div class="col-md-6">
+<img src="Pemandian-Alami-Rahtawu.jpg">
+</div>
+
+<div class="col-md-6">
+<p>
+Desa Rahtawu merupakan salah satu desa di wilayah pegunungan Kabupaten Kudus, Jawa Tengah. 
+Desa ini memiliki potensi alam yang indah serta sumber daya masyarakat yang aktif dalam kegiatan sosial dan lingkungan.
+</p>
+
+<p>
+Namun demikian, kondisi geografis yang berada di lereng pegunungan menjadikan Desa Rahtawu memiliki potensi bencana seperti tanah longsor dan banjir.
+Oleh karena itu, masyarakat bersama pemerintah desa terus melakukan berbagai upaya mitigasi bencana.
+</p>
+
+<p>
+Melalui program Desa Tangguh Bencana dan kegiatan PPK Ormawa, Desa Rahtawu berupaya menciptakan masyarakat yang tanggap, siap, dan mandiri dalam menghadapi bencana.
+</p>
+
+</div>
+
+</div>
+
+</div>
+</section>
+
+<!-- PETA LOKASI DESA -->
+<section id="lokasi">
+<div class="container">
+
+<div class="sec-title">
+<h2>Peta Lokasi Desa Rahtawu</h2>
+</div>
+
+<p style="text-align:center">
+Berikut adalah lokasi Desa Rahtawu yang terletak di Kabupaten Kudus, Jawa Tengah.
+</p>
+
+<div class="row justify-content-center">
+
+<div class="col-md-6">
+<iframe 
+src="https://maps.google.com/maps?q=Desa%20Rahtawu%20Kudus&t=&z=13&ie=UTF8&iwloc=&output=embed"
+width="100%" height="300" style="border-radius:10px;">
+</iframe>
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+</section>
+
+<!-- BERITA -->
+<section id="berita" style="background:#f5f5f5">
+<div class="container">
+
+<div class="sec-title">
+<h2>Berita Terkini</h2>
+</div>
+
+<div class="row">
+
+<div class="col-md-4">
+<img src="kegiatan.JPG" class="card-img">
+<h4>Simulasi Evakuasi Warga</h4>
+<p>Warga Desa Rahtawu mengikuti simulasi evakuasi bencana untuk meningkatkan kesiapsiagaan.</p>
+</div>
+
+<div class="col-md-4">
+<img src="banjir.jpg" class="card-img">
+<h4>Waspada Musim Hujan</h4>
+<p>Pemerintah desa menghimbau masyarakat untuk waspada terhadap potensi banjir bandang.</p>
+</div>
+
+<div class="col-md-4">
+<img src="akar.jpg" class="card-img">
+<h4>Penghijauan Lereng</h4>
+<p>Kegiatan penanaman akar wangi dilakukan untuk mencegah tanah longsor.</p>
+</div>
+
+</div>
+
+</div>
+</section>
+
+<!-- EDUKASI -->
+<section id="edukasi">
+<div class="container">
+
+<div class="sec-title">
+<h2>Edukasi Kebencanaan</h2>
+</div>
+
+<div class="row">
+
+<div class="col-md-6">
+<p>
+Pelajari cara menghadapi bencana seperti banjir dan tanah longsor melalui video edukasi berikut.
+</p>
+</div>
+
+<div class="col-md-6">
+<iframe width="100%" height="250"
+src="https://www.youtube.com/embed/b5wjvTA4ao4"
+allowfullscreen></iframe>
+</div>
+
+</div>
+<hr style="margin:40px 0">
+
+<div class="sec-title">
+<h2>Panduan & Buku Saku Kebencanaan</h2>
+<p>Berikut panduan praktis yang dapat digunakan masyarakat dalam menghadapi bencana.</p>
+</div>
+
+<div class="row">
+
+<!-- CARD 1 -->
+<div class="col-md-4">
+<div class="card-panduan">
+<h4>📘 Panduan Siaga Banjir</h4>
+<p>
+Langkah-langkah menghadapi banjir mulai dari persiapan, saat kejadian, hingga pasca bencana.
+</p>
+
+<ul>
+<li>Siapkan tas darurat</li>
+<li>Matikan listrik</li>
+<li>Segera evakuasi ke tempat tinggi</li>
+<li>Ikuti arahan petugas</li>
+</ul>
+
+<a href="#" class="btn-panduan">Download PDF</a>
+</div>
+</div>
+
+<!-- CARD 2 -->
+<div class="col-md-4">
+<div class="card-panduan">
+<h4>📗 Panduan Tanah Longsor</h4>
+<p>
+Cara mengenali tanda-tanda longsor dan tindakan penyelamatan diri.
+</p>
+
+<ul>
+<li>Perhatikan retakan tanah</li>
+<li>Hindari lereng curam saat hujan</li>
+<li>Segera menjauh dari area rawan</li>
+<li>Laporkan ke perangkat desa</li>
+</ul>
+
+<a href="#" class="btn-panduan">Baca Artikel</a>
+</div>
+</div>
+
+<!-- CARD 3 -->
+<div class="col-md-4">
+<div class="card-panduan">
+<h4>📙 Buku Saku Keluarga Tangguh</h4>
+<p>
+Panduan untuk keluarga dalam menghadapi kondisi darurat.
+</p>
+
+<ul>
+<li>Simpan nomor darurat</li>
+<li>Siapkan logistik 3 hari</li>
+<li>Tentukan titik kumpul keluarga</li>
+<li>Latihan evakuasi rutin</li>
+</ul>
+
+<a href="#" class="btn-panduan">Download</a>
+</div>
+</div>
+
+</div>
+
+
+<!-- EDUKASI PEREMPUAN & REMAJA -->
+<hr style="margin:50px 0;">
+<div class="sec-title" style="margin-top:60px;">
+<h2>Edukasi Perempuan & Remaja</h2>
+</div>
+
+<div class="row">
+
+<div class="col-md-4">
+<img src="perempuan.jpeg" class="card-img">
+<h4>Kesiapsiagaan Perempuan</h4>
+<p>
+Perempuan memiliki peran penting dalam keluarga saat bencana. 
+Siapkan tas siaga, dokumen penting, dan kebutuhan darurat keluarga.
+</p>
+</div>
+
+<div class="col-md-4">
+<img src="remaja.jpeg" class="card-img">
+<h4>Edukasi Remaja</h4>
+<p>
+Remaja diajarkan untuk tanggap terhadap situasi darurat, memahami jalur evakuasi, 
+dan membantu proses penyelamatan.
+</p>
+</div>
+
+<div class="col-md-4">
+<img src="https://images.unsplash.com/photo-1511895426328-dc8714191300" class="card-img">
+<h4>Kesehatan & Keamanan</h4>
+<p>
+Pastikan menjaga kesehatan, kebersihan, serta keamanan diri selama dan setelah bencana terjadi.
+</p>
+</div>
+
+</div>
+
+</div>
+</section>
+
+<!-- DENAH / PETA EVAKUASI -->
+<section id="denah" style="background:#f5f5f5">
+<div class="container">
+
+<div class="sec-title">
+<h2>Denah & Jalur Evakuasi</h2>
+</div>
+
+<p style="text-align:center">
+Denah ini menunjukkan jalur evakuasi, titik kumpul, dan area rawan bencana di Desa Rahtawu.
+</p>
+
+<div class="row justify-content-center">
+
+<div class="col-md-6">
+<iframe 
+src="https://maps.google.com/maps?q=Desa%20Rahtawu%20Kudus&t=&z=13&ie=UTF8&iwloc=&output=embed"
+width="100%" height="300" style="border-radius:10px;">
+</iframe>
+</div>
+
+</div>
+
+</div>
+</section>
+
+<!-- DOKUMENTASI -->
+<section id="dokumentasi" style="background:#f5f5f5">
+<div class="container">
+
+<div class="sec-title">
+<h2>Dokumentasi Kegiatan</h2>
+</div>
+
+<div class="row">
+
+<div class="col-md-4">
+<img src="magot.jpeg" class="card-img">
+<h4>Budidaya Maggot</h4>
+<p>Budidaya maggot dilakukan untuk mengolah sampah organik sekaligus menjadi pakan ternak yang bernilai ekonomi bagi masyarakat Desa Rahtawu.</p>
+</div>
+
+<div class="col-md-4">
+<img src="kegiatan.JPG" class="card-img">
+<h4>Simulasi Evakuasi</h4>
+<p>Simulasi evakuasi dilakukan untuk melatih masyarakat agar siap menghadapi bencana seperti banjir dan tanah longsor.</p>
+</div>
+
+<div class="col-md-4">
+<img src="akar.jpg" class="card-img">
+<h4>Penanaman Akar Wangi</h4>
+<p>Penanaman akar wangi dilakukan di daerah lereng untuk memperkuat struktur tanah dan mencegah terjadinya longsor.</p>
+</div>
+
+</div>
+
+</div>
+</section>
+
+<!-- FOOTER -->
+<footer id="kontak">
+
+<div class="container">
+
+<h3>Kontak Desa Rahtawu</h3>
+
+<div class="kontak-grid">
+
+<div class="kontak-item">
+<i class="fa-solid fa-phone"></i>
+<span>0812-3456-7890</span>
+</div>
+
+<div class="kontak-item">
+<i class="fa-solid fa-envelope"></i>
+<span>desarahtawu@gmail.com</span>
+</div>
+
+</div>
+
+<hr>
+
+<p>Desa Rahtawu | Kecamatan Gebog | Kabupaten Kudus</p>
+<p>© 2026 Desa Tangguh Bencana Rahtawu</p>
+
+</div>
+
+</footer>
+
+</body>
+</html>
